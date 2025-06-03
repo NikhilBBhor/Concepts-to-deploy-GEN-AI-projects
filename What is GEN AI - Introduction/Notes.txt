@@ -16,8 +16,9 @@
 tokenization: Since machine only understand numerical data, the training data is tokenised and then feeded to the LLM
             So while inferencing as well (using the model), the prompt is converted into numbers (tokenised) and then passed to the model. The model also replies in tokenised format but it is then de-tokenised and displayed to user.
 
-Semantic meaning: Meaning of the word based on the context. eg. sentence1: "Apple is my favourite fruit", 
-                                                                sentence2: "Apple has very nice phones"
+Semantic meaning: Meaning of the word based on the context.
+                In simple words it’s about what something means — not just what it says.
+                eg. sentence1: "Apple is my favourite fruit", sentence2: "Apple has very nice phones"
 
 Vector embeding: Vector embedings finds out Semantic meaning of each word. It tries to understand the word by 
                 assigning some values to the different properties or the parameters of the word in the context. 
@@ -31,3 +32,33 @@ Vector embeding: Vector embedings finds out Semantic meaning of each word. It tr
                     Result  = [     1.0,      0,       0,        0.9,     1 ] ≈ queen  # Semantic meaning
 
 Install OpenAI, python-dotenv, pip freeze
+
+Positional Encoding: The meaning of a word changes with respect to its positon in the sentence. So the positional 
+                    encoding assigns a value to each word to adjusts the vector embedings of each word as per its position in the sentence to achieve its semantic meaning.
+                    eg. sentence1:"The cat sat on the mat", sentence2: "The mat sat on the cat"
+
+Self Attention: It helps to understand meaning of that word in the sentence
+                eg. "The animal didn't cross the street because it was too tired."
+                Here we know "it" refer to "the animal" but ai does not, so Self-attention mechanism assigns some value to each word in relation to every other word in the context which helps models to figure out the importance of that word in the sentence.
+
+Multi-Head Attention:   It is the extension of self attention, here instead of finding relation in the sentence, 
+                        model tries to cover different aspects of that word parallely which helps in understanding meaning of that word in the sentence.
+
+Traing Phase:   Model is trained and back propagated (This eats lots of GPU)
+Inferencing Phase:  Model is being used
+Back Popagation: When model output varies from the expected output, loss is calculated and weights are updated 
+
+Output of Model: Model generates number of outputs with its probabilities for the given input 
+Softmax: It picks only most probable output
+Temprature: Controls the randomness of the model output by ineracting with Softmax
+
+Output Generation: Each output word is generated one by one. After every generated word the present "whole" sentence 
+                is again circulated in the model to predict next probable word (token). 
+                eg. User Input: "How are you?",
+                model's input: <start>How are you?   --> Output --> <start>How are you? I -->
+                model's input: <start>How are you? I    --> Output --> <start>How are you? I am -->
+                model's input: <start>How are you? I am   --> Output --> <start>How are you? I am fine. -->
+                model's input: <start>How are you? I fine.   --> Output --> <start>How are you? I am fine. <end> -->
+                Final Output: "I am fine."
+                    
+    
