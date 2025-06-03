@@ -1,0 +1,33 @@
+-- create an vertual enviornment --> python -m venv venv
+
+-- activate vertual enviornment --> Mac/Linux -->> source venv/bin/activate
+                                 Windows -->> venv\Scripts\activate
+
+-- install tiktoken >> developed by OpenAI (OpenAI uses it for tokenization)
+
+-- do --> pip freeze > requirements.txt  # Saves installed libraries with versions
+
+-- Vocab Size: Total number of different words (unique tokens) on which model is trained
+               (total no of words in the dictionary of the model)
+            Every model has different Vocab Size
+        
+-- Tokens: Token are nothing but text encoded into numbers
+
+tokenization: Since machine only understand numerical data, the training data is tokenised and then feeded to the LLM
+            So while inferencing as well (using the model), the prompt is converted into numbers (tokenised) and then passed to the model. The model also replies in tokenised format but it is then de-tokenised and displayed to user.
+
+Semantic meaning: Meaning of the word based on the context. eg. sentence1: "Apple is my favourite fruit", 
+                                                                sentence2: "Apple has very nice phones"
+
+Vector embeding: Vector embedings finds out Semantic meaning of each word. It tries to understand the word by 
+                assigning some values to the different properties or the parameters of the word in the context. 
+                These values of the properties later helps in solving complex problems. It basically generates numerical relations of the words with each other. This parameter size varies model to model and it is very huge as compare to the following example.
+                Very famous example: king - man + woman ≈ queen
+                                Athority    event   has tail?   rich    gender
+                    king    = [     1,        0,       0,        1,      -1 ]
+                -   man     = [     -0.2,     0,       0,        -0.3,   1  ]
+                +   woman   = [     0.2,      0,       0,        0.2,    1  ]
+                ---------------------------------------------------------------------
+                    Result  = [     1.0,      0,       0,        0.9,     1 ] ≈ queen  # Semantic meaning
+
+Install OpenAI, python-dotenv, pip freeze
