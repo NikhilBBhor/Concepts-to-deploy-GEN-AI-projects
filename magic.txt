@@ -1,0 +1,2 @@
+This is a magical text!
+Magical line {1..10}
