@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Weather App</h1>
+    <div id="weather-container">
+        <select id="city-dropdown" onchange="getWeather()">
+            <option value="">Select a city</option>
+            <option value="New York">New York</option>
+            <option value="London">London</option>
+            <option value="Paris">Paris</option>
+            <option value="Tokyo">Tokyo</option>
+            <option value="Sydney">Sydney</option>
+        </select>
+        <div id="weather-details"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
