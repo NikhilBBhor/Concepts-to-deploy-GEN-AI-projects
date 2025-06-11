@@ -1,0 +1,77 @@
+body {
+  background: #18181b;
+  color: #fafafa;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+.container {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #23232e;
+  border-radius: 16px;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.65);
+  padding: 32px;
+}
+h1 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #9f7aea;
+}
+#todo-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+#todo-input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #28283c;
+  color: #fff;
+}
+#todo-input:focus {
+  outline: 2px solid #9f7aea;
+}
+button {
+  background: #9f7aea;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0 20px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(100, 62, 240, 0.1);
+}
+ul#todo-list {
+  list-style: none;
+  padding: 0;
+}
+ul#todo-list li {
+  background: #28283c;
+  margin-bottom: 12px;
+  padding: 14px 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.08em;
+}
+ul#todo-list li.completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+  opacity: 0.7;
+}
+.del-btn {
+  background: transparent;
+  border: none;
+  color: #9f7aea;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: color .12s;
+}
+.del-btn:hover {
+  color: #ff4455;
+}

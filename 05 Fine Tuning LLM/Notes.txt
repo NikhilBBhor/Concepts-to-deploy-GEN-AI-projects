@@ -1,0 +1,6 @@
+Why fine tuning is required?
+-- To get output to your taste
+
+Will we use it frequently in the development?
+-- Most probably no, but its good to have knowledge
+

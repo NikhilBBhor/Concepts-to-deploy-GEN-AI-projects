@@ -45,11 +45,16 @@ result = client.chat.completions.create(
     messages=[
         {"role": "system", "content": system_prompt},
         {"role": "user", "content":"What is the current wheather in Pune?"},
+        # Output 1: {"step": "Plan", "content": "The user is interested in current weather data of Pune"}
         {"role": "assistant", "content": json.dumps({"step": "Plan", "content": "The user is interested in current weather data of Pune"})},
+        # Output 2: {"step": "Plan", "content": "From the available tools I should call get_weather"}
         {"role": "assistant", "content": json.dumps({"step": "Plan", "content": "From the available tools I should call get_weather"})},
+        # Output 3: {"step": "Action", "function": "get_weather", "input": "Pune"}
         {"role": "assistant", "content": json.dumps({"step": "Action", "function": "get_weather", "input": "Pune"})},
+        # Output 4: {"step": "Observe", "output": "31 Degree Celcius"}
         {"role": "assistant", "content": json.dumps({"step": "Observe", "output": "31 Degree Celcius"})}
     ]
 )
 
-print(result.choices[0].message.content)
+print(result.choices[0].message.content)  
+# Final Output: {"step": "Output", "output": "The current weather in Pune is 31 Degree Celsius."}

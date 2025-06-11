@@ -99,3 +99,43 @@ while True:
         if parsed_response.get("step") == "output":
             print(f"🤖: {parsed_response.get("content")}")
             break
+
+
+# Example ------------------------------------------------------------------------
+"""
+Input: “Create a simple TODO app in a dedicated folder with a modern dark theme”
+
+Output: 
+
+🧠: The user requests creation of a simple TODO app in a dedicated folder with a modern dark theme. The first step is to create a dedicated folder for the app. 
+
+🧠: To create the folder, I should use the 'run_command' tool to execute a command that makes a new directory for the TODO app. 
+
+🛠️: Calling Tool:run_command with input mkdir todo_app 
+
+🧠: The folder 'todo_app' has been created. Next, I need to set up the basic files for a simple TODO app. Typically, the main files include index.html, style.css (for modern dark theme), and script.js. 
+
+🧠: To set up the initial project structure, I should create index.html, style.css, and script.js files inside the 'todo_app' directory. This step can be handled with a Linux command. 
+
+🛠️: Calling Tool:run_command with input touch todo_app/index.html todo_app/style.css todo_app/script.js 
+
+🧠: The required files (index.html, style.css, script.js) have been created in the 'todo_app' directory. Now, I should populate index.html with a basic HTML structure that links to the CSS and JavaScript files. 
+
+🧠: To add the basic HTML structure to index.html, including linking to style.css and script.js, I will use a Linux command with echo/redirection. 
+
+🛠️: Calling Tool:run_command with input echo <HTML_CODE>
+
+🧠: The index.html file now contains a basic structure for the TODO app. The next step is to create a modern dark theme style in style.css to ensure the app has a visually appealing dark mode appearance. 
+
+🧠: I will now add modern dark theme CSS to the style.css file using a Linux command. 
+
+🛠️: Calling Tool:run_command with input echo  <CSS_CODE> 
+
+🧠: The modern dark theme CSS has been added to style.css. The next step is to implement the JavaScript logic in script.js to handle adding, toggling, and removing TODO list items. 
+
+🧠: I will add JavaScript code to script.js that allows users to add, mark as completed, and delete TODO items, by responding to form events and dynamically manipulating the DOM. 
+
+🛠️: Calling Tool:run_command with input echo  <JS_CODE>
+
+🤖: Your simple TODO app with a modern dark theme has been created in the 'todo_app' folder. Open index.html in your browser to start using it! The app supports adding tasks, marking them as complete, and deleting them—all with a stylish dark mode.
+"""
