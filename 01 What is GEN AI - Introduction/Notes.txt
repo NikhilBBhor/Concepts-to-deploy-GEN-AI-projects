@@ -6,6 +6,7 @@
 -- install tiktoken >> developed by OpenAI (OpenAI uses it for tokenization)
 
 -- do --> pip freeze > requirements.txt  # Saves installed libraries with versions
+-- install --> pip install -r requirements.txt # Install all of the dependancies from requirements.txt
 
 -- Vocab Size: Total number of different words (unique tokens) on which model is trained
                (total no of words in the dictionary of the model)

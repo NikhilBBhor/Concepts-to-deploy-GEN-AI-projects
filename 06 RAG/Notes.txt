@@ -1,0 +1,20 @@
+* PDF RAG
+-- PDF > Text > 
+-- Indexing of chunked data with the help of LLM
+    -- carry out vector embedding of each chunk (indexing can be of any technique but vector embedding gives semantic meaning)
+    -- store it in a vector database (pine cone, pgvector, qdrant, astra, neo4j) with metadata of the chunk
+
+-- Carry out vector embedding of the user query > Search for the vector embedding in vector db 
+    > Retrive relevant chunk's meta data > get relevant data from data source based on meta data 
+    > feed it to LLM for content relevant output 
+    (Data also can be stored with vector embeddings which will eliminate data retrieval from data source)
+
+Simplest RAG Setup ----------------
+
+    Query Translation
+        Enrichment node
+            User query > Multi query
+            Multi query + user query > embedding + data retrieval
+        
+    
+
