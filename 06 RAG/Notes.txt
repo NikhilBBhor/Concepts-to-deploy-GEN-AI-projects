@@ -1,13 +1,15 @@
+Docker Command: docker compose -f <file_name> up
+
 * PDF RAG
 -- PDF > Text > 
 -- Indexing of chunked data with the help of LLM
     -- carry out vector embedding of each chunk (indexing can be of any technique but vector embedding gives semantic meaning)
     -- store it in a vector database (pine cone, pgvector, qdrant, astra, neo4j) with metadata of the chunk
 
--- Carry out vector embedding of the user query > Search for the vector embedding in vector db 
-    > Retrive relevant chunk's meta data > get relevant data from data source based on meta data 
-    > feed it to LLM for content relevant output 
-    (Data also can be stored with vector embeddings which will eliminate data retrieval from data source)
+-- Carry out vector embedding of the user query --> Search for the vector embedding in vector db 
+    --> Retrive relevant chunk's meta data --> get relevant data from data source based on meta data 
+    --> feed it to LLM for content relevant output 
+    (Data can be stored with vector embeddings which will eliminate data retrieval from data source)
 
 Simplest RAG Setup ----------------
 
